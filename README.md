@@ -37,17 +37,21 @@ BEFORE
     // Verify results - FOR TESTING
     if (verify) {
         cdaxpy(X, Y, cZ, n, A);
-	//FOR C RESULT CHECKER FOR TESTING (ADD)
+	
+FOR C RESULT CHECKER FOR TESTING (ADD)
+
 	printf("\nResult C:\n");
-		int k = n;
-			if (n > 10) {
-			    k = 10;
-			}
-		    int h;	
-			for (h = 0; h < k; h++) {
-			    printf("Z[%d]  %.1lf\n", h, Z[h]);
-			}
-		int i;
+	int k = n;
+		if (n > 10) {
+		    k = 10;
+		}
+	    int h;	
+		for (h = 0; h < k; h++) {
+		    printf("Z[%d]  %.1lf\n", h, Z[h]);
+		}
+AND BEFORE
+
+    int i;
         for (i = 0; i < n; i++) {
             if (Z[i] != cZ[i]) {
                 printf("[Incorrect] index %d: C computed Z[%d] = %.1lf, while SASM computed Z[%d] = %.1lf\n ",
@@ -57,6 +61,5 @@ BEFORE
         }
         printf("Results match.\n");
     }
-
     return duration;
     }
