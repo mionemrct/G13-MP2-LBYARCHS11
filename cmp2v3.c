@@ -11,7 +11,7 @@ void cdaxpy(double *X, double *Y, double *Z, int n, double A) {
     }
 }
 
-// Function to allocate and initialize vectors
+// Allocate and initialize vectors
 // Modifies the pointers to allocate memory dynamically, hence the use of **
 int initialize_vectors(double **X, double **Y, double **Z, double **cZ, int n) {
     *X = (double *)malloc(n * sizeof(double));
@@ -39,7 +39,7 @@ int initialize_vectors(double **X, double **Y, double **Z, double **cZ, int n) {
     return 0;
 }
 
-// Function to perform a single run of the DAXPY operation
+// Perform a single run of the DAXPY operation
 // Receives pointers to the input vectors (X, Y), output vectors (Z, cZ), the scalar A, and vector size n.
 double rundaxpy(int n, double A, double *X, double *Y, double *Z, double *cZ, int verify) {
     clock_t start, end;
