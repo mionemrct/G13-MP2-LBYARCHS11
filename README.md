@@ -71,7 +71,7 @@ AND BEFORE
     int i;
         for (i = 0; i < n; i++) {
             if (Z[i] != cZ[i]) {
-                printf("[Incorrect] index %d: C computed Z[%d] = %.1lf, while SASM computed Z[%d] = %.1lf\n ",
+                printf("[Incorrect] index %d: C computed Z[%d]  %.1lf, while SASM computed Z[%d]  %.1lf\n ",
                        i, i, Z[i], i, cZ[i]);
                 return duration;
             }
