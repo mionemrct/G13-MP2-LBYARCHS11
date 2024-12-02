@@ -1,0 +1,7 @@
+D:\>nasm -f win64 mp2.asm
+
+D:\>gcc -c cmp2v3.c -o cmp2v3.obj -m64
+
+D:\>gcc cmp2v3.obj mp2.obj -o cmp2v3.exe -m64
+
+D:\>cmp2v3.exe
