@@ -7,7 +7,24 @@ Group Members:
 PROJECT SPECIFICATION (FIRST ATTEMPT):
 ![image](https://github.com/user-attachments/assets/42115e3f-b892-4dfc-a014-942d1175fa07)
 
-To double check SASM Results realtime:
+# i.) Comparative execution time and short analysis of the performance of the kernels
+
+The observation when running the two kernels, **SASM** and **C**, is that the performance when using **2^20** and **2^24** vector sizes are executed within the range of **0.004 to 0.080 seconds**. However, The initial runs show slightly variable execution times, stabilized to **0.006–0.007** **seconds** in later iterations. Meanwhile, when running **2^28** and **2^29**, most runs are executed within a slow range of **40 to 180 seconds**. The vector sizes **2^20** and **2^24** are relatively moderate for the performance test (runs), while the **2^28** and **2^29** vector sizes, execution time arises.
+
+SASM and C kernels produce matching outputs when verified by comparing and matching the Z vector values across all the runs. It also shows that the execution times suggest similar efficiency for the tested workload for SASM and C kernels. Both kernels are accurate and generate similar results for every vector size and scalar multiplication. However, as for the efficiency, both kernels are efficient but are slow when it comes to bigger vector sizes such as **2^28** and **2^29**, revealing a difference in how the kernels scale with increasing data volume.
+
+# ii. and iii.) Take a screenshot of the program output with the correctness check (C and x86-64).
+	ii.) Take a screenshot of the program output with the correctness check (C).
+	iii.) Take a screenshot of the program output, including the correctness check (x86-64).
+![image](https://github.com/user-attachments/assets/d8957238-3203-4fbc-bc36-55f1ca7e0dc0)
+![image](https://github.com/user-attachments/assets/06244d96-ab83-4082-b1dd-81e7a7ccf48c)
+.
+.
+.
+![image](https://github.com/user-attachments/assets/b2252142-a17d-4138-9a30-2d821b0b3c89)
+![image](https://github.com/user-attachments/assets/63cdb031-83ab-4b21-847b-a7bdbe6a41ee)
+
+# To double check SASM and C Results realtime:
 
 
     double rundaxpy(int n, double A, double *X, double *Y, double *Z, double *cZ, int verify) {
